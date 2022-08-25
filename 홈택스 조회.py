@@ -93,12 +93,12 @@ nw.send_keys(y+m+d)
 
 ta = browser.find_element_by_xpath('//*[@id="inqrPrpse"]')
 ta.click()
-ta.send_keys("청년내일채움공제 참여자격")
+ta.send_keys("")#주민등록번호로 사업자등록하는 사유
 
 from openpyxl import load_workbook
 import os
 
-os.chdir(r"Z:\2022.01.청년내일채움공제(서부)")
+os.chdir("")#반영할 엑셀 주소
 wb = load_workbook(filename = '엑셀온라인 신청 확인.xlsm') # 파일 연동
 sr = wb['온라인신청명단'] # 워크시트 호출
 
@@ -139,7 +139,7 @@ del wb['2020']
 del wb['2021']
 del wb['2021(추경)']
 del wb['2022']    
-wb.save('Z:\장현우\크롤링.xlsx') # 엑셀 파일 저장
+wb.save('') # 엑셀 파일 저장
 
 #
 
