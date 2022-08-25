@@ -1,15 +1,13 @@
 from bs4 import BeautifulSoup
 import requests
-import re
-import time
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import selenium
-import pyautogui
+
 import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-import datetime
+
 
 from openpyxl import Workbook
 browser = webdriver.Chrome(r"C:\file_python\chromedriver")
@@ -65,14 +63,15 @@ for page in search_urls:
     #print(clips[0].text)
 
     # c = clips[0].select_one('a.news_tit')
-    b = b+1
+    
     a = 0
     a = a + b
     for c in clips:
         a = a + 1
         title = c.select_one('a.news_tit')
-        print(title.text)
+        print(a,b,title.text)
         ws["A" + str(a)] = title.text
+    b = b + 10
     
 wb.save(r"C:\file_python\samp.xlsx")
  # 브라우저 종료하기
